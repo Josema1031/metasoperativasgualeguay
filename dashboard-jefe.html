@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel del Jefe</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Panel del Jefe</h1>
+      <p id="jefeInfo" class="muted"></p>
+    </div>
+
+    <div class="topbar-actions">
+      <input type="month" id="mesFiltro" class="input-mes">
+      <button id="btnFiltrar" class="btn btn-secundario">Ver mes</button>
+      <button id="btnSalir" class="btn btn-danger">Salir</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="resumenGeneral" class="grid cards-4"></section>
+
+    <section class="card">
+      <div class="section-head">
+        <div>
+          <h2>Rendimiento mensual del personal</h2>
+          <p class="muted">Ordenado por puntaje operativo.</p>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nombre</th>
+              <th>DNI</th>
+              <th>Total</th>
+              <th>Puntos</th>
+              <th>Delitos</th>
+              <th>Infracciones</th>
+              <th>Prevenciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaPersonal"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./js/jefe.js"></script>
+</body>
+</html>

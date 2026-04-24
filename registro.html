@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar resultado</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Registrar resultado</h1>
+      <p class="muted">Carga individual del resultado operativo.</p>
+    </div>
+    <button id="btnVolver" class="btn btn-secundario">Volver</button>
+  </header>
+
+  <main class="container narrow">
+    <section class="card">
+      <form id="formRegistro" class="form-grid">
+        <label>
+          Fecha
+          <input type="date" id="fecha" required>
+        </label>
+
+        <label>
+          Tipo de resultado
+          <select id="tipo" required>
+            <option value="">Seleccionar</option>
+            <option>Infracción CNRT</option>
+            <option>Artículo 24</option>
+            <option>Artículo 27</option>
+            <option>Hallazgo de droga</option>
+            <option>Infracción ley de pesca</option>
+            <option>Infracción ley de caza</option>
+            <option>Procedimiento positivo</option>
+            <option>Intervención preventiva</option>
+            <option>Secuestro</option>
+            <option>Delito constatado</option>
+          </select>
+        </label>
+
+        <label>
+          Categoría
+          <select id="categoria" required>
+            <option value="">Seleccionar</option>
+            <option value="infraccion">Infracción</option>
+            <option value="delito">Delito</option>
+            <option value="prevencion">Prevención</option>
+          </select>
+        </label>
+
+        <label>
+          Detalle
+          <textarea id="detalle" rows="4" placeholder="Describa brevemente el resultado operativo..."></textarea>
+        </label>
+
+        <button type="submit" class="btn btn-primario">Guardar resultado</button>
+        <p id="msg" class="msg"></p>
+      </form>
+    </section>
+  </main>
+
+  <script type="module" src="./js/registro.js"></script>
+</body>
+</html>

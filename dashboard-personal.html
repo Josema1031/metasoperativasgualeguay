@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Panel Operativo</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Mi Panel Operativo</h1>
+      <p id="bienvenida" class="muted"></p>
+    </div>
+
+    <div class="topbar-actions">
+      <a href="./registro.html" class="btn btn-primario">Cargar resultado</a>
+      <button id="btnSalir" class="btn btn-danger">Salir</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="grid cards-3">
+      <article class="card stat-card">
+        <span class="label">Meta mensual</span>
+        <strong id="metaTotal">0</strong>
+      </article>
+      <article class="card stat-card">
+        <span class="label">Resultados cargados</span>
+        <strong id="resultadosTotal">0</strong>
+      </article>
+      <article class="card stat-card">
+        <span class="label">Cumplimiento</span>
+        <strong id="cumplimiento">0%</strong>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Mis resultados del mes</h2>
+      <div id="listaResultados" class="lista-simple"></div>
+    </section>
+  </main>
+
+  <script type="module" src="./js/personal.js"></script>
+</body>
+</html>
