@@ -27,12 +27,14 @@ function pintarResumen(datos) {
   const delitos = datos.reduce((acc, p) => acc + p.delito, 0);
   const infracciones = datos.reduce((acc, p) => acc + p.infraccion, 0);
   const prevenciones = datos.reduce((acc, p) => acc + p.prevencion, 0);
+  const judicial = datos.reduce((acc, p) => acc + p.judicial, 0);
 
   resumenGeneral.innerHTML = `
     <article class="card stat-card"><span class="label">Total resultados</span><strong>${total}</strong></article>
     <article class="card stat-card"><span class="label">Delitos</span><strong>${delitos}</strong></article>
     <article class="card stat-card"><span class="label">Infracciones</span><strong>${infracciones}</strong></article>
     <article class="card stat-card"><span class="label">Prevenciones</span><strong>${prevenciones}</strong></article>
+     <article class="card stat-card"><span class="label">Judicial</span><strong>${judicial}</strong></article>
   `;
 }
 
@@ -59,7 +61,8 @@ async function cargarTablero(perfil, mes) {
           puntos: 0,
           delito: 0,
           infraccion: 0,
-          prevencion: 0
+          prevencion: 0,
+          judicial: 0
         };
       }
 
@@ -68,6 +71,7 @@ async function cargarTablero(perfil, mes) {
       if (item.categoria === "delito") resumen[item.uid].delito += 1;
       if (item.categoria === "infraccion") resumen[item.uid].infraccion += 1;
       if (item.categoria === "prevencion") resumen[item.uid].prevencion += 1;
+      if (item.categoria === "judicial") resumen[item.uid].judicial += 1;
     });
 
     const datos = Object.values(resumen).sort((a, b) => b.puntos - a.puntos);
@@ -84,6 +88,7 @@ async function cargarTablero(perfil, mes) {
           <td>${p.delito}</td>
           <td>${p.infraccion}</td>
           <td>${p.prevencion}</td>
+           <td>${p.judicial}</td>
         </tr>
       `).join("")
       : `<tr><td colspan="8">Sin resultados cargados para el mes seleccionado.</td></tr>`;

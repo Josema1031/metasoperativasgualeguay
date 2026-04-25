@@ -22,13 +22,17 @@ function puntosPorTipo(tipo) {
     "Infracción CNRT": 1,
     "Artículo 24": 1,
     "Artículo 27": 1,
-    "Hallazgo de droga": 3,
+    "SENASA": 1,
+    "Procedimiento de droga": 3,
+    "Procedimiento de Arma": 3,
+    "Procedimiento de documentacion adulterado/falsa": 3,
+    "Solicitud de secuestro": 2,     
+    "Solicitud de Captura": 2, 
     "Infracción ley de pesca": 1,
     "Infracción ley de caza": 1,
-    "Procedimiento positivo": 2,
-    "Intervención preventiva": 1,
-    "Secuestro": 2,
-    "Delito constatado": 3
+    " Citacion/notificacion": 1,
+    "Acta de apertura de precinto": 1 
+       
   };
   return mapa[tipo] || 1;
 }

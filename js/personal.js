@@ -45,7 +45,7 @@ protegerRuta("personal", async (user, perfil) => {
     const resultados = [];
     resSnap.forEach((d) => resultados.push({ id: d.id, ...d.data() }));
 
-    const objetivo = meta?.objetivoMinimo || 10;
+    const objetivo = meta?.objetivoMinimo || 15;
     const total = resultados.length;
     const porcentaje = objetivo > 0 ? Math.min(100, Math.round((total / objetivo) * 100)) : 0;
 
