@@ -37,6 +37,11 @@ loginForm?.addEventListener("submit", async (e) => {
       return;
     }
 
+     if (usuario.rol === "Auxiliar") {
+      window.location.href = "./dashboard-jefe.html";
+      return;
+    }
+
     loginMsg.textContent = "Rol no reconocido.";
   } catch (error) {
     console.error("Error al iniciar sesión:", error);
